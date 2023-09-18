@@ -26,7 +26,7 @@ void   SPI_voidSlaveInit()
 	GPIOA->AFRL|=(0x5555<<16);
 
 
-	SPI1->SPI_CR1=0x0343;
+	 SPI1->SPI_CR1=0x0343;
 }
 void   SPI_voidMasterInit()
 {
