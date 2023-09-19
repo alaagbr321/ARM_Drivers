@@ -25,9 +25,6 @@ int main()
 	SYSTICK_voidInit();
 	/*Enable Peripheral Clock*/
 	RCC_voidEnablePeripheralClock(RCC_AHB1,RCC_AHB1_GPIOA);
-	RCC_voidEnablePeripheralClock(RCC_APB2,RCC_APB2_SPI1);
-	GPIO_voidSetPinMode(GPIO_PORTA,GPIO_PIN5,GPIO_OUTPUT);
-	GPIO_voidSetPinMode(GPIO_PORTA,GPIO_PIN7,GPIO_OUTPUT);
 	GPIO_voidSetPinMode(GPIO_PORTA,2,GPIO_OUTPUT);
 	GPIO_voidSetPinMode(GPIO_PORTA,1,GPIO_OUTPUT);
 	SPI_voidMasterInit();
