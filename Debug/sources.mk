@@ -31,6 +31,7 @@ src/HAL/DotMatrix \
 src/HAL/IR \
 src/HAL/SSD \
 src/HAL/STP \
+src/HAL/TFT \
 src/MCAL/EXTI \
 src/MCAL/GPIO \
 src/MCAL/NVIC \

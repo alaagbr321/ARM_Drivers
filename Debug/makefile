@@ -21,6 +21,7 @@ RM := rm -rf
 -include src/MCAL/NVIC/subdir.mk
 -include src/MCAL/GPIO/subdir.mk
 -include src/MCAL/EXTI/subdir.mk
+-include src/HAL/TFT/subdir.mk
 -include src/HAL/STP/subdir.mk
 -include src/HAL/SSD/subdir.mk
 -include src/HAL/IR/subdir.mk

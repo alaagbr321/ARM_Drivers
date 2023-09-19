@@ -10,9 +10,11 @@
 #include "HAL/STP/STP_Interface.h"
 #include "HAL/SSD/SSD_Private.h"
 #include "LIB/song.h"
+#include"LIB/Image.h"
 #include"HAL/DotMatrix/DotMatrix_Interface.h"
 #include "HAL/IR/IR_Interface.h"
 #include "MCAL/SPI/SPI_Interface.h"
+#include "HAL/TFT/TFT_Interface.h"
 
 
 
@@ -23,24 +25,20 @@ int main()
 	SYSTICK_voidInit();
 	/*Enable Peripheral Clock*/
 	RCC_voidEnablePeripheralClock(RCC_AHB1,RCC_AHB1_GPIOA);
-	RCC_voidEnablePeripheralClock(RCC_AHB1,RCC_AHB1_GPIOB);
-	RCC_voidEnablePeripheralClock(RCC_APB2,RCC_APB2_SYSCFG);
 	RCC_voidEnablePeripheralClock(RCC_APB2,RCC_APB2_SPI1);
-	GPIO_voidSetPinMode(GPIO_PORTA,GPIO_PIN8,GPIO_OUTPUT);
+	GPIO_voidSetPinMode(GPIO_PORTA,GPIO_PIN5,GPIO_OUTPUT);
+	GPIO_voidSetPinMode(GPIO_PORTA,GPIO_PIN7,GPIO_OUTPUT);
+	GPIO_voidSetPinMode(GPIO_PORTA,2,GPIO_OUTPUT);
+	GPIO_voidSetPinMode(GPIO_PORTA,1,GPIO_OUTPUT);
 	SPI_voidMasterInit();
+	TFT_voidInit();
+
+	TFT_voidDisplayImage(image);
 
 
-	u8 data;
 
-	while(1)
-	{
-		data=SPI_voidSendReceiveData('1');
-		if(data=='2')
-		{
-			GPIO_voidSetPinValue(GPIO_PORTA,GPIO_PIN8,GPIO_HIGH);
-		}
 
-	}
+
 	return 0;
 
 
