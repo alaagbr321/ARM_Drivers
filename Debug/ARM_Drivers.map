@@ -4165,10 +4165,10 @@ END GROUP
 
 .inits          0x080003f4       0x28
                 0x080003f4                __data_regions_array_start = .
-                0x080003f4        0x4 LONG 0x8015744 LOADADDR (.data)
+                0x080003f4        0x4 LONG 0x800b744 LOADADDR (.data)
                 0x080003f8        0x4 LONG 0x20000000 ADDR (.data)
                 0x080003fc        0x4 LONG 0x20000074 (ADDR (.data) + SIZEOF (.data))
-                0x08000400        0x4 LONG 0x8015744 LOADADDR (.data_CCMRAM)
+                0x08000400        0x4 LONG 0x800b744 LOADADDR (.data_CCMRAM)
                 0x08000404        0x4 LONG 0x10000000 ADDR (.data_CCMRAM)
                 0x08000408        0x4 LONG 0x10000000 (ADDR (.data_CCMRAM) + SIZEOF (.data_CCMRAM))
                 0x0800040c                __data_regions_array_end = .
@@ -4200,7 +4200,7 @@ END GROUP
 .flashtext
  *(.flashtext .flashtext.*)
 
-.text           0x08000420    0x15323
+.text           0x08000420     0xb323
  *(.text .text.*)
  .text._exit    0x08000420        0x2 ./system/src/newlib/_exit.o
                 0x08000420                _exit
@@ -4292,38 +4292,38 @@ END GROUP
                 0x08000ba0       0x7c ./src/HAL/TFT/TFT_Program.o
                 0x08000ba0                TFT_voidInit
  .text.TFT_voidDisplayImage
-                0x08000c1c       0x5e ./src/HAL/TFT/TFT_Program.o
+                0x08000c1c       0x68 ./src/HAL/TFT/TFT_Program.o
                 0x08000c1c                TFT_voidDisplayImage
  .text.__initialize_hardware
-                0x08000c7a        0x2 ./src/_initialize_hardware.o
-                0x08000c7a                __initialize_hardware
- .text.main     0x08000c7c       0x58 ./src/main.o
-                0x08000c7c                main
- .text.__errno  0x08000cd4        0xc d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
-                0x08000cd4                __errno
+                0x08000c84        0x2 ./src/_initialize_hardware.o
+                0x08000c84                __initialize_hardware
+ *fill*         0x08000c86        0x2 
+ .text.main     0x08000c88       0x58 ./src/main.o
+                0x08000c88                main
+ .text.__errno  0x08000ce0        0xc d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
+                0x08000ce0                __errno
  .text._vsnprintf_r
-                0x08000ce0       0x58 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08000ce0                _vsniprintf_r
-                0x08000ce0                _vsnprintf_r
+                0x08000cec       0x58 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x08000cec                _vsniprintf_r
+                0x08000cec                _vsnprintf_r
  .text.vsnprintf
-                0x08000d38       0x1c d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08000d38                vsniprintf
-                0x08000d38                vsnprintf
+                0x08000d44       0x1c d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x08000d44                vsniprintf
+                0x08000d44                vsnprintf
  .text.__ssputs_r
-                0x08000d54       0xb4 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08000d54                __ssputs_r
+                0x08000d60       0xb4 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08000d60                __ssputs_r
  .text._svfprintf_r
-                0x08000e08      0x1ec d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08000e08                _svfiprintf_r
-                0x08000e08                _svfprintf_r
+                0x08000e14      0x1ec d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08000e14                _svfiprintf_r
+                0x08000e14                _svfprintf_r
  .text._printf_common
-                0x08000ff4       0xea d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08000ff4                _printf_common
- *fill*         0x080010de        0x2 
+                0x08001000       0xea d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08001000                _printf_common
+ *fill*         0x080010ea        0x2 
  .text._printf_i
-                0x080010e0      0x224 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x080010e0                _printf_i
- *fill*         0x08001304        0xc 
+                0x080010ec      0x224 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x080010ec                _printf_i
  .text          0x08001310       0xa0 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memchr.o)
                 0x08001310                memchr
  .text.memcpy   0x080013b0       0x16 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
@@ -4356,50 +4356,50 @@ END GROUP
  .rodata.str1.4
                 0x080016e4       0x2c ./system/src/cortexm/exception_handlers.o
                                  0x2a (size before relaxing)
- .rodata.image  0x08001710    0x14000 ./src/main.o
+ .rodata.image  0x08001710     0xa000 ./src/main.o
                 0x08001710                image
  .rodata._svfprintf_r.str1.1
-                0x08015710       0x11 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x0800b710       0x11 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x08015721       0x22 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0800b721       0x22 d:/iti/iti_arm/ecclipse_arm/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
  *(vtable)
  *(.eh_frame*)
  *(.glue_7)
- .glue_7        0x08015743        0x0 linker stubs
+ .glue_7        0x0800b743        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08015743        0x0 linker stubs
+ .glue_7t       0x0800b743        0x0 linker stubs
 
-.vfp11_veneer   0x08015744        0x0
- .vfp11_veneer  0x08015744        0x0 linker stubs
+.vfp11_veneer   0x0800b744        0x0
+ .vfp11_veneer  0x0800b744        0x0 linker stubs
 
-.v4_bx          0x08015744        0x0
- .v4_bx         0x08015744        0x0 linker stubs
+.v4_bx          0x0800b744        0x0
+ .v4_bx         0x0800b744        0x0 linker stubs
 
-.iplt           0x08015744        0x0
- .iplt          0x08015744        0x0 ./system/src/newlib/_exit.o
+.iplt           0x0800b744        0x0
+ .iplt          0x0800b744        0x0 ./system/src/newlib/_exit.o
 
-.rel.dyn        0x08015744        0x0
- .rel.iplt      0x08015744        0x0 ./system/src/newlib/_exit.o
+.rel.dyn        0x0800b744        0x0
+ .rel.iplt      0x0800b744        0x0 ./system/src/newlib/_exit.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08015744                . = ALIGN (0x4)
-                0x08015744                __exidx_start = .
+                0x0800b744                . = ALIGN (0x4)
+                0x0800b744                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08015744                __exidx_end = .
-                0x08015744                . = ALIGN (0x4)
-                0x08015744                _etext = .
-                0x08015744                __etext = .
+                0x0800b744                __exidx_end = .
+                0x0800b744                . = ALIGN (0x4)
+                0x0800b744                _etext = .
+                0x0800b744                __etext = .
 
-.data_CCMRAM    0x10000000        0x0 load address 0x08015744
+.data_CCMRAM    0x10000000        0x0 load address 0x0800b744
  FILL mask 0xff
  *(.data.CCMRAM .data.CCMRAM.*)
                 0x10000000                . = ALIGN (0x4)
-                0x08015744                _sidata = LOADADDR (.data)
+                0x0800b744                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x74 load address 0x08015744
+.data           0x20000000       0x74 load address 0x0800b744
  FILL mask 0xff
                 0x20000000                _sdata = .
                 0x20000000                __data_start__ = .
@@ -4419,7 +4419,7 @@ END GROUP
                 0x20000074                _edata = .
                 0x20000074                __data_end__ = .
 
-.igot.plt       0x20000074        0x0 load address 0x080157b8
+.igot.plt       0x20000074        0x0 load address 0x0800b7b8
  .igot.plt      0x20000074        0x0 ./system/src/newlib/_exit.o
 
 .bss_CCMRAM     0x10000000        0x0
@@ -4664,7 +4664,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x82c9
+.debug_info     0x00000000     0x82d2
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x956 ./system/src/newlib/_exit.o
  .debug_info    0x00000956      0x942 ./system/src/newlib/_sbrk.o
@@ -4681,9 +4681,9 @@ END GROUP
  .debug_info    0x0000674d      0x26d ./src/MCAL/RCC/RCC_Program.o
  .debug_info    0x000069ba      0x307 ./src/MCAL/GPIO/GPIO_Program.o
  .debug_info    0x00006cc1      0x2c2 ./src/MCAL/EXTI/EXTI_Program.o
- .debug_info    0x00006f83      0x3e5 ./src/HAL/TFT/TFT_Program.o
- .debug_info    0x00007368      0xcfe ./src/_initialize_hardware.o
- .debug_info    0x00008066      0x263 ./src/main.o
+ .debug_info    0x00006f83      0x3ee ./src/HAL/TFT/TFT_Program.o
+ .debug_info    0x00007371      0xcfe ./src/_initialize_hardware.o
+ .debug_info    0x0000806f      0x263 ./src/main.o
 
 .debug_abbrev   0x00000000     0x1ec2
  *(.debug_abbrev)
@@ -4706,7 +4706,7 @@ END GROUP
  .debug_abbrev  0x00001b9e      0x234 ./src/_initialize_hardware.o
  .debug_abbrev  0x00001dd2       0xf0 ./src/main.o
 
-.debug_line     0x00000000     0x53ce
+.debug_line     0x00000000     0x53da
  *(.debug_line)
  .debug_line    0x00000000      0x35b ./system/src/newlib/_exit.o
  .debug_line    0x0000035b      0x30f ./system/src/newlib/_sbrk.o
@@ -4723,9 +4723,9 @@ END GROUP
  .debug_line    0x000040a5      0x118 ./src/MCAL/RCC/RCC_Program.o
  .debug_line    0x000041bd      0x207 ./src/MCAL/GPIO/GPIO_Program.o
  .debug_line    0x000043c4      0x1c3 ./src/MCAL/EXTI/EXTI_Program.o
- .debug_line    0x00004587      0x1c8 ./src/HAL/TFT/TFT_Program.o
- .debug_line    0x0000474f      0xa2a ./src/_initialize_hardware.o
- .debug_line    0x00005179      0x255 ./src/main.o
+ .debug_line    0x00004587      0x1d4 ./src/HAL/TFT/TFT_Program.o
+ .debug_line    0x0000475b      0xa2a ./src/_initialize_hardware.o
+ .debug_line    0x00005185      0x255 ./src/main.o
 
 .debug_frame    0x00000000      0xab8
  *(.debug_frame)
@@ -4799,7 +4799,7 @@ END GROUP
  .debug_str     0x00073838      0x22a ./src/main.o
                                0x3768 (size before relaxing)
 
-.debug_loc      0x00000000     0x1b04
+.debug_loc      0x00000000     0x1b2d
  *(.debug_loc)
  .debug_loc     0x00000000       0x85 ./system/src/newlib/_sbrk.o
  .debug_loc     0x00000085      0x2cb ./system/src/newlib/_startup.o
@@ -4813,7 +4813,7 @@ END GROUP
  .debug_loc     0x00000a4d      0x11a ./src/MCAL/RCC/RCC_Program.o
  .debug_loc     0x00000b67      0xe38 ./src/MCAL/GPIO/GPIO_Program.o
  .debug_loc     0x0000199f       0xb7 ./src/MCAL/EXTI/EXTI_Program.o
- .debug_loc     0x00001a56       0xae ./src/HAL/TFT/TFT_Program.o
+ .debug_loc     0x00001a56       0xd7 ./src/HAL/TFT/TFT_Program.o
 
 .debug_macinfo
  *(.debug_macinfo)
