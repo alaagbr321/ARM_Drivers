@@ -82,11 +82,11 @@ void TFT_voidDisplayImage(const u16 *ImagePtr)
 
 	for(counter=0; counter<20480; counter++)
 	{
-		data = ImagePtr[counter] >> 8;
+		data = ImagePtr[counter] ;
 		TFT_SendData(data);
 
-		data = ImagePtr[counter] & 0xFF; // for low part
-		TFT_SendData(data);
+		//		data = ImagePtr[counter] & 0xFF; // for low part
+		//		TFT_SendData(data);
 	}
 
 
