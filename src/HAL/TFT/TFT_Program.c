@@ -85,8 +85,8 @@ void TFT_voidDisplayImage(const u16 *ImagePtr)
 		data = ImagePtr[counter] >>8;
 		TFT_SendData(data);
 
-				data = ImagePtr[counter] & 0xFF; // for low part
-				TFT_SendData(data);
+		data = ImagePtr[counter] & 0xFF; // for low part
+		TFT_SendData(data);
 	}
 
 
