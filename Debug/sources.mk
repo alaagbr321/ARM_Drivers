@@ -28,11 +28,13 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src/HAL/DotMatrix \
+src/HAL/ESP \
 src/HAL/IR \
 src/HAL/SSD \
 src/HAL/STP \
 src/HAL/TFT \
 src/MCAL/EXTI \
+src/MCAL/Flash \
 src/MCAL/GPIO \
 src/MCAL/NVIC \
 src/MCAL/RCC \

@@ -19,6 +19,8 @@
 void UART_voidInit(u8 UART_ID,u32 Copy_u32BaudRate);
 void UART_voidSendData(u8 UART_ID,u8 Copy_u8Data);
 u8 UART_u8RecieveData(u8 UART_ID);
+void UART_voidTransmit(u8 *arr);
+void UART_u8RecieveDataAsync(u8 UART_ID,u8 *ptr);
 
 
 

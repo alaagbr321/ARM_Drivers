@@ -130,33 +130,74 @@ void UART_voidSendData(u8 UART_ID,u8 Copy_u8Data)
 
 
 }
+
+void UART_voidTransmit(u8 *arr)
+{
+
+	u16 timeout=0;
+	u8 i=0;
+	while(arr[i] != '\0')
+	{
+		UART1->USART_DR = arr[i];
+		while(GET_BIT(UART1->USART_SR,TC)==0)
+		{
+			timeout++;
+			if(timeout == 10000)
+			{
+				break;
+			}
+		}
+		i++;
+	}
+
+
+
+}
 u8 UART_u8RecieveData(u8 UART_ID)
 {
 	u8 LocalResult=0;
+	u16 timeout=0;
 	switch(UART_ID)
-		{
+	{
 
 	case UART_1:
-	while(GET_BIT(UART1->USART_SR,RXNE)==0);
-	LocalResult= UART1->USART_DR;
-	break;
+		while(GET_BIT(UART1->USART_SR,RXNE)==0)
+		{
+
+			timeout++;
+			if(timeout == 10000)
+			{
+				LocalResult = 128;
+				break;
+			}
+		}
+
+		 if(LocalResult == 0)
+		    {
+			 LocalResult= UART1->USART_DR;
+		    }
+//		 CLR_BIT(UART1->USART_SR,RXNE);
+
+		break;
 
 
 
 	case UART_2:
-	while(GET_BIT(UART2->USART_SR,RXNE)==0);
-	LocalResult= UART2->USART_DR;
-	break;
+		while(GET_BIT(UART2->USART_SR,RXNE)==0);
+		LocalResult= UART2->USART_DR;
+		break;
 
 
 	case UART_6:
-	while(GET_BIT(UART6->USART_SR,RXNE)==0);
-	LocalResult= UART6->USART_DR;
-	break;
-		}
+		while(GET_BIT(UART6->USART_SR,RXNE)==0);
+		LocalResult= UART6->USART_DR;
+		break;
+	}
 
 	return LocalResult;
 
 }
+
+
 
 

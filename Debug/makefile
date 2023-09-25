@@ -20,11 +20,13 @@ RM := rm -rf
 -include src/MCAL/RCC/subdir.mk
 -include src/MCAL/NVIC/subdir.mk
 -include src/MCAL/GPIO/subdir.mk
+-include src/MCAL/Flash/subdir.mk
 -include src/MCAL/EXTI/subdir.mk
 -include src/HAL/TFT/subdir.mk
 -include src/HAL/STP/subdir.mk
 -include src/HAL/SSD/subdir.mk
 -include src/HAL/IR/subdir.mk
+-include src/HAL/ESP/subdir.mk
 -include src/HAL/DotMatrix/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
