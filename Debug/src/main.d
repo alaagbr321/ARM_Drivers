@@ -7,7 +7,7 @@ src/main.o: ../src/main.c ../src/LIB/STD_TYPES.h ../src/LIB/BIT_MATH.h \
  ../src/HAL/SSD/SSD_Private.h ../src/LIB/song.h \
  ../src/HAL/DotMatrix/DotMatrix_Interface.h ../src/HAL/IR/IR_Interface.h \
  ../src/MCAL/UART/UART_Interface.h ../src/MCAL/SPI/SPI_Interface.h \
- ../src/HAL/ESP/ESP_Interface.h
+ ../src/HAL/ESP/ESP_Interface.h ../src/MCAL/Flash/Flash_Interface.h
 
 ../src/LIB/STD_TYPES.h:
 
@@ -42,3 +42,5 @@ src/main.o: ../src/main.c ../src/LIB/STD_TYPES.h ../src/LIB/BIT_MATH.h \
 ../src/MCAL/SPI/SPI_Interface.h:
 
 ../src/HAL/ESP/ESP_Interface.h:
+
+../src/MCAL/Flash/Flash_Interface.h:

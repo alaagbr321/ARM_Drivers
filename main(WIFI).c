@@ -16,7 +16,6 @@
 #include "MCAL/UART/UART_Interface.h"
 #include "MCAL/SPI/SPI_Interface.h"
 #include "HAL/ESP/ESP_Interface.h"
-#include "MCAL/Flash/Flash_Interface.h"
 
 
 
@@ -25,11 +24,6 @@ int main()
 {
 	/*Initialize RCC*/
 	RCC_voidInit();
-
-//	u16 data[3] = {0x3144,0x4222,0x3213};
-//	Flash_voidEraseSector(1);
-//	Flash_voidFlashSector(0x8004000,data,3);
-
 	SYSTICK_voidInit();
 	/*Enable Peripheral Clock*/
 	RCC_voidEnablePeripheralClock(RCC_AHB1,RCC_AHB1_GPIOA);
@@ -47,8 +41,11 @@ u8 Local_u8Var;
 
 	while(1)
 	{
+//		ESP_voidConnectToServer();
 		Local_u8Var=ESP_u8GetData();
 
+//		Local_u8Var=UART_u8RecieveData(UART_1);
+//		UART_voidSendData(UART_1,Local_u8Var);
 		if(Local_u8Var=='1')
 		{
 			GPIO_voidSetPinValue(GPIO_PORTA,GPIO_PIN8,GPIO_HIGH);

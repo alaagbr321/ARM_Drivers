@@ -21,7 +21,7 @@ void ESP_voidInit()
 
 	while(Local_u8Var!=129)
 	{
-		UART_voidTransmit("ATE1\r\n");
+		UART_voidTransmit("ATE0\r\n");
 		Local_u8Var=ESP_voidValidation();
 	}
 	Local_u8Var=0;
@@ -36,7 +36,7 @@ void ESP_voidConnectToNetWork()
 	u8 Local_u8Var=0;
 	while(Local_u8Var!=129)
 	{
-		UART_voidTransmit("AT+CWJAP=\"3la2\",\"12345678\"\r\n");
+		UART_voidTransmit("AT+CWJAP=\"WE_C14AD0\",\"n7111072\"\r\n");
 		Local_u8Var=ESP_voidValidation();
 	}
 
@@ -62,6 +62,7 @@ u8  ESP_u8GetData()
 		UART_voidTransmit("AT+CIPSEND=40\r\n");
 		Local_u8Var=ESP_voidValidation();
 	}
+
 	UART_voidTransmit("GET http://alaa.freevar.com/status.txt\r\n");
 
 

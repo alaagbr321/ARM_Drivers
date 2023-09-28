@@ -8,7 +8,7 @@
 #ifndef MCAL_FLASH_FLASH_PRIVATE_H_
 #define MCAL_FLASH_FLASH_PRIVATE_H_
 
-#define FlashBaseAddress       0x08000000
+#define FlashBaseAddress       0x40023C00
 #define KEY1                   0x45670123
 #define KEY2                   0xCDEF89AB
 

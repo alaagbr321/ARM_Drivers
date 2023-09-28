@@ -24,7 +24,7 @@ void Flash_voidEraseSector(u8 Sector_id)
 		Flash->KEYR=KEY2;
 	}
 	/*Select Sector To Erase*/
-	Flash->CR &=~((0b1111)<<3);
+	Flash->CR &=(~(0b1111)<<3);
 	Flash->CR |=(Sector_id<<3);
 
 	/*Activate Sector*/
@@ -58,6 +58,7 @@ void Flash_voidFlashSector(u32 Copy_u32Address,u16 * Copy_u16Data,u32 Copy_u32Nu
 	{
 
 		*((volatile u16*)Copy_u32Address)=Copy_u16Data[i];
+
 		Copy_u32Address+=2;
 		while(GET_BIT(Flash->SR,16)==1);
 	}
